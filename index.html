@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="section_cuerpo">
+        <nav id="navbar">
+            <header>
+                <h1 class="title">DISEÑO WEB RESPONSIVE</h1>
+            </header>
+            <ul>
+                <li><a href="#El_diseño_como_problema_y_como_solución">El diseño como problema y como solución</a></li>
+                <li>
+                    <a href="#Que_son_las_Media_Queries">¿Qué son las Media Queries?</a>
+                </li>
+                <li>
+                    <a href="#Combinacion_de_condiciones_para_crear_rangos">Combinacion de condiciones para crear rangos</a>
+                </li>
+                <li>
+                    <a href="#Diseño_web_adaptable_sencible_responsive">Diseño web adaptable, sencible, responsive</a>
+                </li>
+                <li>
+                    <a href="#Elementos_del_diseño_web_adaptable">Elementos del diseño web adaptable</a>
+                </li>
+                <li>
+                    <a href="#Esquema_tipografico_flexible">Esquema tipografico flexible</a>
+                </li>
+                <li>
+                    <a href="#Maquetacion_adaptable_y_flexible">Maquetacion adaptable y flexible</a>
+                </li>
+                <li>
+                    <a href="#Grillas_flexibles">Grillas flexibles</a>
+                </li>
+                <li>
+                    <a href="#Navegacion_adaptable">Navegacion adaptable</a>
+                </li>
+                <li>
+                    <a href="#Referencias"> Referencias</a>
+                </li>
+
+            </ul>
+
+        </nav>
+        <main id="main_doc">
+            <section class="main_section">
+                <header id="El_diseño_como_problema_y_como_solución">
+                    <h2>El diseño como problema y como solución</h2>
+                </header>
+
+                <article>
+                    <p>Las páginas web por naturaleza son “adaptables" desde el nacimiento mismo de la Web. Para comprobar que esta hipótesis es correcta, pensemos en un archivo HTML correctamente estructurado, con encabezados, párrafos y listas. Pero sin
+                        diseño. Es decir, un archivo HTML al que no le vinculamos ninguna hoja de estilos, al que no lo maquetamos. </p>
+                    <p class="segundo-par">Por ejemplo, el siguiente:</p>
+                </article>
+                <article class="codigohtml">
+                    <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;title&gt;Aprendiendo HTML5&lt;/title&gt;
+                                &lt;meta charset="utf-8"&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1&gt;Actualizate a HTML5 y CSS3&lt;/h1&gt;
+                                &lt;p&gt;Estamos marcando semánticamente los contenidos de nuestros sitios web, y agregamos microdata. Aplicamos efectos decorativos con CSS3 como sombras, gradientes y relieves.&lt;/p&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+                        </code>
+                    </pre>
+
+                </article>
+                <li class="elemento-lista">Si tratamos de navegar este archivo desde dispositivos de distintos tamaños, no tendremos ningún problema para acceder a sus contenidos: el texto será legible en un celular, en una tableta y en una PC también.</li>
+                <li>El hecho de que seamos los responsables del problema es una muy buena noticia, ya que si estamos provocando el problema, también está en nuestras manos la solución. No depende de “otros”, no es causada por los fabricantes de dispositivos
+                    ni de navegadores ni de editores HTML: está plenamente en nuestras manos la decisión de hacer que nuestros sitios empleen técnicas adaptables.</li>
+            </section>
+            <section class="main_section">
+                <header id="Que_son_las_Media_Queries">
+                    <h2>¿Qué son las Media Queries?</h2>
+                </header>
+                <article>
+                    <p>Ante todo, la técnica: se denomina Media Queries a la posibilidad de definir condiciones que deben cumplirse para que el navegador procese algunas reglas de estilo específicas dentro de nuestra hoja CSS.</p>
+                    <p class="segundo-par">Por ejemplo, podríamos definir una condición que determine que si el tamaño de pantalla es menor a 480px de ancho, el navegador procese ciertos estilos CSS que dejaremos preparados. En esos estilos, definiremos diseños ideales para
+                        un dispositivo que cumpla con esa condición, es decir, que no supere ese ancho de pantalla de 480px.</p>
+                </article>
+                <article>
+                    <pre>
+                        <code>
+                        @media screen and (max-width:480px){
+                            body {
+                                font-size:80%; // achicamos la fuente en pantallas pequeñas 
+                            } 
+                        }
+                        </code>
+                    </pre>
+                </article>
+                <li class="elemento-lista">Mediante el uso de esta técnica, se intenta optimizar la experiencia de uso de un sitio web para adaptar el diseño al contexto. En este caso, sería un tamaño variable de pantallas el que le brinda un contexto muy particular a los contenidos,
+                    limitando los diseños posibles.</li>
+            </section>
+            <section class="main_section">
+                <header id="Combinacion_de_condiciones_para_crear_rangos">
+
+                    <h2>
+                        Combinacion de condiciones para crear rangos
+                    </h2>
+
+                </header>
+                <article>
+                    <p class="segundo-par">También podemos combinar varias condiciones en una sola utilizando el operador lógico “and” tantas veces como sub-condiciones necesitemos combinar. En el siguiente ejemplo, combinaremos dos condiciones: que sea una pantalla y que mida
+                        como mínimo 1024 pixeles de ancho.</p>
+                </article>
+                <article>
+                    <pre>
+                        <code>
+                             @media screen and (min-width: 1024px) { }
+                        </code>
+                    </pre>
+                </article>
+                <article>
+                    <p class="elemento-lista">En este otro ejemplo, combinaremos tres condiciones: que sea pantalla, que mida más de 320px y menos de 768 pixeles de ancho.</p>
+                    <p class="segundo-par"></p>
+                </article>
+                <article>
+                    <pre>
+                        <code>
+                            @media screen and (min-width: 321px) and (max-width: 768px) { }
+                        </code>
+                    </pre>
+                </article>
+                <li class="elemento-lista">Deberemos tener especial cuidado en que los valores de los rangos que definamos no se superpongan. Es decir, si el valor máximo de uno es 320, definiremos el inicio del siguiente rango en 321 y no en 320 exactos, ya que de lo contrario
+                    se leerán las dos hojas cuando un dispositivo tenga exactamente esa medida.</li>
+            </section>
+            <section class="main_section">
+                <header id="Diseño_web_adaptable_sencible_responsive">
+                    <h2>
+                        Diseño web adaptable, sencible, responsive
+                    </h2>
+                </header>
+                <p>Esta técnica llamada media queries, que nos permite condicionar la lectura de distintos estilos, es la que nos abre la posibilidad a un nuevo enfoque de diseño web, que resulta ideal para dar soporte a la enorme diversidad de dispositivos
+                    existentes actualmente. Este enfoque es conocido como “diseño web adaptable” o “diseño web sensible” (responsive web design, originalmente).</p>
+                <p>En pantallas grandes (una media querie de “Mayor a 1024px”, por ejemplo) podríamos hacer flotar 3 columnas, mientras que en una tableta (una media querie de “Mayor a 800px”, por ejemplo) solo dejaremos flotar 2 columnas, y en el caso de
+                    pantallas más angostas (celulares, sin media queries) anularemos todos los flotados, reduciendo la cantidad de columnas a una sola (“apilando” los contenidos uno debajo del otro).</p>
+                <li>Veamos cómo sería el código:</li>
+                <article>
+                    <pre>
+                        <code>
+                            /* Diseño para celulares */
+                            #columna1, #columna2, #columna3 {
+                            float:none;
+                            width:100%;
+                            }
+                        
+                            /* Diseño para tabletas */ 
+                            @media screen and (min-width: 800px) {
+                            #columna1, #columna2 {
+                                float:left;
+                                width:50%;
+                            }
+                            }
+                        </code>
+                    </pre>
+                </article>
+            </section>
+            <section class="main_section">
+                <header id="Elementos_del_diseño_web_adaptable">
+                    <h2>Elementos del diseño web adaptable</h2>
+                </header>
+                <p>Los elementos centrales de un diseño adaptable o “sensible” son al menos cuatro:</p>
+                <ol>
+                    <li>Esquema tipográfico flexible</li>
+                    <li>Maquetación adaptable usando Media Queries, modificando la cantidad de columnas del diseño, con grillas flexibles, adaptando los anchos dentro de cada rango.</li>
+                    <li>Maquetación adaptable usando Media Queries, modificando la cantidad de columnas del diseño, con grillas flexibles, adaptando los anchos dentro de cada rango.</li>
+                    <li>Navegación adaptable, optimizada para touch en pantallas pequeñas</li>
+
+                </ol>
+                <code></code>
+                <li></li>
+            </section>
+
+            <section class="main_section">
+                <header id="Esquema_tipografico_flexible">
+                    <h2>Esquema tipografico flexible</h2>
+                </header>
+                <p>LEl primer elemento del diseño que volveremos flexible desde nuestra hoja de estilos será el texto. La novedad será que cambiaremos la unidad de medida más utilizada hasta el momento para definir el tamaño de las fuentes mediante la propiedad
+                    font-size (es decir, los pixeles), por otras dos unidades de medida más versátiles.</p>
+
+            </section>
+            <section class="main_section">
+                <header id="Maquetacion_adaptable_y_flexible">
+                    <h2>Maquetacion adaptable y flexible</h2>
+                </header>
+                <p>Aprovechando que cada zona de la hoja de estilos que envolvamos entre media queries permite que ciertos estilos se apliquen solo en un rango de tamaños de pantalla, en cada zona acomodaremos los contenidos en columnas de una manera optimizada
+                    para el tamaño del dispositivo.</p>
+
+            </section>
+            <section class="main_section">
+                <header id="Grillas_flexibles">
+                    <h2>Grillas flexibles</h2>
+                </header>
+                <p>La grilla flexible consiste en definir anchos de contenedor y de columnas en porcentajes, para que los bloques de un diseño mantengan una proporción entre sí dentro del rango de ancho mínimo y máximo definido en cada media query del punto
+                    anterior.
+                </p>
+
+            </section>
+            <section class="main_section">
+                <header id="Navegacion_adaptable">
+                    <h2>Navegacion adaptable</h2>
+                </header>
+                <p>La navegación es otro de los puntos críticos que debe adaptarse en un sitio para permitir su uso en teléfonos y tabletas.</p>
+                <p>En el caso de la PC, vemos una serie de submenús desplegables, a partir de una lista (ul) de primer nivel que contiene el nombre de cada sección en letras grandes, y con una segunda línea descriptiva. Vemos cómo, en un tamaño mediano de
+                    pantalla (tableta), esa segunda línea desaparece, y el tamaño de fuente es menor. Ese cambio puede lograrse con algo tan sencillo como cambiar el font-size (ya lo vimos en el primer punto de este capítulo) y ocultar con display:none
+                    los subtítulos por defecto, haciéndolos visibles con display:block a partir de cierto tamaño de pantalla.</p>
+
+            </section>
+            <section class="main_section">
+                <header id="Referencias">
+                    <h2>
+                        Referencias:
+                    </h2>
+                </header>
+                <article>
+                    <li>
+                        <a href="https://disenowebakus.net/diseno-web-responsive.php">MDN</a>
+                    </li>
+                    <li>
+                        <a href="https://developer.mozilla.org/es/docs/Desarrollo_Web/Web_adaptable">Diseño Web</a>
+                    </li>
+                </article>
+
+            </section>
+
+
+        </main>
+    </section>
+
+</body>
+
+</html>

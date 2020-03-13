@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.section_cuerpo {
+    /* background-color: red; */
+    /* color: royalblue; */
+    font-family: "Roboto", sans-serif;
+    /* font-weight: initial; */
+}
+
+#navbar {
+    padding-top: 2rem;
+    /* padding-bottom: 1rem; */
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    overflow: auto;
+    /* background: powderblue; */
+    /* border: 1px #000 solid; */
+}
+
+.title {
+    padding-bottom: 2rem;
+}
+
+body .section_cuerpo #navbar ul li {
+    padding: 1rem;
+    /* padding-bottom: 2rem; */
+    border: 1px gray solid;
+}
+
+body .section_cuerpo #navbar ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+body .section_cuerpo #navbar ul li a:hover {
+    color: red;
+}
+
+#main_doc {
+    position: absolute;
+    margin-left: 300px;
+    /* background: salmon; */
+}
+
+
+/* .codigohtml pre {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+} */
+
+.segundo-par {
+    margin-bottom: 2rem;
+}
+
+.elemento-lista {
+    margin-top: 2rem;
+}
+
+pre {
+    tab-size: 4;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f6f7f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    overflow: scroll;
+    width: 900px;
+}
+
+@media (max-width: 500px) {
+    #navbar {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        overflow: auto;
+    }
+    #main_doc {
+        position: relative;
+        margin-left: 0;
+        margin-top: 200px;
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 910px) {
+    pre {
+        width: 300px;
+    }
+}
+
+.main_section {
+    margin: 1.6rem;
+    padding-top: 2rem;
+    justify-content: justify;
+}
+
+h2,
+h3 {
+    padding-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+body #main_doc .main_section article li a {
+    text-decoration: none;
+}
